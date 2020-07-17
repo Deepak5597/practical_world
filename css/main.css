@@ -146,3 +146,14 @@ code{
     border-right: 1px solid #f7f7f7;
     padding: 15px !important;
 }
+
+footer{
+    background: var(--bg-color);
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: 0px;
+}
