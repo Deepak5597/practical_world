@@ -35,16 +35,14 @@
 
 nav{
 
-    background-color:  var(--white-bg-color);
+    background-color:  var(--bg-color);
     color:white;
-    padding: 10px 0px;
-    border-bottom:1px solid #eee;
+    padding: 11px 0px;
 }
 
 .logo{
-    width: 40px;
+    width: 122px;
     display: table;
-    margin:0 auto;
 }
 .logo-text{
     font-size: 20px;
