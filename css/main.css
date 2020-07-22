@@ -33,6 +33,11 @@
     background-color: var(--mark-light-color);
 }
 
+.top-nav{
+    position: relative;
+    z-index:9999;
+}
+
 nav{
 
     background-color:  var(--bg-color);
@@ -60,6 +65,7 @@ ul.social-links li{
 ul.social-links li a{
     padding:0px 10px;   
     color:white;
+    text-decoration: none;
 }
 
 
@@ -241,3 +247,39 @@ p.quote-text{
 .active-subtopic{
     text-decoration: underline;
 }
+
+.side-nav-wrapper {
+    position: absolute;
+    background: white;
+    z-index: 999;
+    left: 0;
+    top: -100%;
+    transition: 1s;
+}
+
+.side-nav-wrapper.show {
+    top:0;
+    transition: 0.4s ease-out;
+}
+
+.main-content-wrapper>.row{
+    position: relative;
+}
+
+.social-links>li>a.collapsed .fa-times{
+    display: none;
+}
+
+.social-links>li>a.collapsed .fa-bars{
+    display: contents;
+}
+
+.social-links>li>a .fa-bars{
+    display: none;
+}
+
+.social-links>li>a .fa-times{
+    display: contents;
+}
+
+
