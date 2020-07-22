@@ -35,7 +35,7 @@
                 <button class="btn text-white bg-dark dropdown-toggle" data-toggle="dropdown"> let's learn</button>
                 <div class="dropdown-menu">
                   <% for(var i =0;i<postConfig.length;i++) {%>
-                  <a class="dropdown-item" href="posts/<%=postConfig[i].mainHeading%>/<%=postConfig[i].subHeading%>"><%=postConfig[i].mainHeading%></a>
+                  <a class="dropdown-item" href="posts/<%=postConfig[i].mainHeadingKey%>/<%=postConfig[i].primarySubKey%>"><%=postConfig[i].mainHeadingLabel%></a>
                   <%}%>
                 </div>
               </div>

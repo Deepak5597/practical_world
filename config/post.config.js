@@ -3,6 +3,7 @@ module.exports={
         {
             mainHeadingKey:'jenkins',
             mainHeadingLabel:'Jenkins',
+            primarySubKey:'install_jenkins_on_centos',
             topics:[
                 {
                     topicHeadingKey:'install_jenkins_on_centos',
@@ -25,6 +26,7 @@ module.exports={
         {
             mainHeadingKey:'node',
             mainHeadingLabel:'Node',
+            primarySubKey:'install_node_on_centos',
             topics:[
                 {
                     topicHeadingKey:'install_node_on_centos',
