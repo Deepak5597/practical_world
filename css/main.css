@@ -36,13 +36,19 @@
 .top-nav{
     position: relative;
     z-index:9999;
-}
-
-nav{
-
     background-color:  var(--bg-color);
     color:white;
     padding: 11px 0px;
+    position: fixed;
+    left:0;
+    top:0;
+    width: 100%;
+    padding:12px 15px;
+}
+
+    
+.main-content-wrapper{
+    margin-top:45px; 
 }
 
 .logo{
@@ -165,6 +171,8 @@ code{
 .side-nav-wrapper{
     border-right: 1px solid #f7f7f7;
     padding: 15px !important;
+    height: 100vh;
+    overflow-y: scroll;
 }
 
 .toggle-bar{
@@ -239,6 +247,10 @@ p.quote-text{
 }
 
 @media screen and (max-width:768px){
+    .side-nav-wrapper{
+        height: auto;
+    }
+
 	p.quote-text{
 		font-size: 10px;
 	}
@@ -260,7 +272,8 @@ p.quote-text{
         top:0;
         transition: 0.4s ease-out;
     }
-    
+
+
     .main-content-wrapper>.row{
         position: relative;
     }
