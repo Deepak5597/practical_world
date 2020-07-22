@@ -1,22 +1,32 @@
 <aside class="col-sm-12 col-md-12 col-lg-2 col-xl-2 side-nav-wrapper  d-md-block" id="quickLinkMenu">
-              <div class="side-nav-search-block mb-1">
-                <form>
-                    <div class="form-row">
-                      <div class="col">
-                        <input type="email" class="form-control" id="search-side-nav" aria-describedby="search-side-nav" placeholder="Enter Keywords ...">
-                      </div>
-                      <!-- <div class="col-auto d-block d-md-none">
-                        <i class="fa fa-bars navbar-toggler toggle-bar-icon" data-toggle="collapse" data-target="#quickLinkMenu" ></i> 	
-                      </div> -->
-                    </div>
-                </form>
-              </div>
-              <div class="sideLinkMenuwrapper" >	
-                      <ul class="side-nav-list">
-                        <li><a href="javascript:void(0)">DEVOPS</a></li>
-                        <li><a href="javascript:void(0)">ANGULAR</a></li>
-                        <li><a href="javascript:void(0)">JAX-RS</a></li>
-                        <li><a href="javascript:void(0)">NODE</a></li>
-                      </ul>
-                </div>
-          </aside>
+  <div class="side-nav-search-block mb-1">
+    <form>
+        <div class="form-row">
+          <div class="col">
+            <input type="email" class="form-control" id="search-side-nav" aria-describedby="search-side-nav" placeholder="Enter Keywords ...">
+          </div>
+        </div>
+    </form>
+  </div>
+  <div class="sideLinkMenuwrapper" >	
+          <ul class="side-nav-list">
+            <% for(var i =0;i<postConfig.length ;i++){%>
+              <% if(postConfig[i].mainHeadingKey == mainTopic){%>
+                <li class="active-main-heading-link" data-toggle="collapse" data-target="#<%=postConfig[i].mainHeadingKey%>"><a href="javascript:void(0)"><%=postConfig[i].mainHeadingLabel%></a></li>
+              <%}else{%>
+                <li class="active-main-heading-link"><a href="javascript:void(0)" data-toggle="collapse" data-target="#<%=postConfig[i].mainHeadingKey%>"><%=postConfig[i].mainHeadingLabel%></a></li>
+              <%}%>  
+
+              <ul class="list-unstyled side-nav-sub-list" id="<%=postConfig[i].mainHeadingKey%>">
+                <% for(var j=0;j<postConfig[i].topics.length;j++){%>
+                    <% if(postConfig[i].topics[j].topicHeadingKey == subTopic){%>
+                      <li class="bg-light active-subtopic"><a href="/posts/<%=postConfig[i].mainHeadingKey%>/<%=postConfig[i].topics[j].topicHeadingKey%>"><%=postConfig[i].topics[j].topicHeadingLabel%></a></li>
+                    <%}else{%>
+                      <li><a href="/posts/<%=postConfig[i].mainHeadingKey%>/<%=postConfig[i].topics[j].topicHeadingKey%>"><%=postConfig[i].topics[j].topicHeadingLabel%></a></li>
+                    <%}%>  
+                <%}%>     
+              </ul>
+            <%}%>
+          </ul>
+    </div>
+</aside>

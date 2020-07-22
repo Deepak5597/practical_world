@@ -12,35 +12,12 @@
   <body>
     
     <div class="main-wrapper">
-      <div class="container-fluid top-nav">
-        <nav class="row">
-            <div class="col">
-                <img class="logo" src="../images/pw-logo-final.png">
-            </div>
-            <div class="col">
-                <ul class="social-links">
-                  <li class=""><a href="javscript:void(0)"><i class="fa fa-github"></i></a></li>
-                </ul>
-            </div>
-        </nav>
-      </div>
+        <%- include(`./partials/header.ejs`) %> 
         <div class="main-content-wrapper">
-          <div class="row no-gutters main-quote_row">
-            <div class="col">
-              <div class="main-quote-block">
-                <blockquote class="blockquote text-center">
-                  <p class="mb-0 quote-text">Learning never exhausts the mind.</p>
-                  <footer class="blockquote-footer"><cite title="Source Title">Leonardo da Vinchi</cite></footer>
-                </blockquote>
-                <button class="btn text-white bg-dark dropdown-toggle" data-toggle="dropdown"> let's learn</button>
-                <div class="dropdown-menu">
-                  <% for(var i =0;i<postConfig.length;i++) {%>
-                  <a class="dropdown-item" href="posts/<%=postConfig[i].mainHeading%>/<%=postConfig[i].subHeading%>"><%=postConfig[i].mainHeading%></a>
-                  <%}%>
-                </div>
-              </div>
-            </div> 
-          </div>
+            <div class="row no-gutters">
+                <%- include('./partials/sidenav',{postConfig:postConfig,mainTopic:mainHeading,subTopic:subHeading}); %> 
+                <%- include(postPath) %> 
+        </div>
         </div>
         <%- include(`./partials/footer.ejs`) %>
     </div> 
