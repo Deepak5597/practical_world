@@ -1,0 +1,94 @@
+<main class="col-sm-12 col-md-12 col-lg-8 col-xl-8 p-4 "> 
+    <h4 class="title-heading">Deploying Node.js starter app using PM2</h4>
+    <div class="heading-content">
+      <p>PM2 is a deamon process manager with a built in load balancer, which helps user to manager and kepp their application live any server.</p>
+    </div>  
+
+    <h4 class="title-heading">Prerequisites</h4>
+    <div class="heading-content">
+      <p><b>1. </b>A server with the user having root access to perform installations. I am using amazon ec2 instance with centos as an operating system.</p>
+      <p><b>2. </b>In order to deploy a nodejs application using pm2 we need to have a project developed on nodejs.</p>
+    </div>
+
+    <h4 class="title-heading">Installing Node</h4>
+    <div class="heading-content">
+      <p>Nodejs will provide a runtime environment for our application. </p>
+      <p><b>1. </b>To install nodejs run  </p>
+      <pre><code>curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -<br>sudo yum install -y nodejs</code>
+      </pre>
+
+      <p><b>2. </b>To verify the nodejs installation run </p>
+      <pre><code>node --version</code>
+      </pre>
+    </div>
+    
+    <h4 class="title-heading">Getting Node.js Starter App</h4>
+    <div class="heading-content">
+      <p ><b>1. </b>You can have any project of your choice but If you choose to go along with the project I am using, you can
+        clone the project using <a href="https://github.com/Deepak5597/NodeJs-Starter.git">repository</a> </p>
+      <pre><code>git clone https://github.com/Deepak5597/NodeJs-Starter.git</code>
+      </pre>
+      <p ><b>2. </b>Move to your project directory an run below command to install required node modules for your peoject </p>
+      <pre><code>npm install</code>
+      </pre>
+      <div class="img-block">
+        <img class="img-responsive w-100 mb-3"  src="../../../images/node/deploying_nodejs_starter_app_using_pm2/npm_install.PNG">
+      </div>
+      <p>After installation, a <b>node_modules</b> folder should appear at your project root directory.If so, We are now ready to deploy our application</p>
+    </div>
+
+    <h4 class="title-heading">Installing pm2</h4>
+    <div class="heading-content">
+      <p>In order to install pm2 on centos use below command. Just keep in mind that Node should be installed before pm2 as pm2 requires node package manager (npm) for installation</p>
+      <pre><code>npm install -g pm2</code>
+      </pre>
+    </div>
+
+    <h4 class="title-heading">Deploying Application</h4>
+    <div class="heading-content">
+      <p><b>1. </b>Change your current working directory to the root folder of your project by using below command</p>
+      <pre><code>cd path_to_your_project</code>
+      </pre>
+      <p><b>2. </b>In your project root directory run</p>
+      <pre><code>pm2 start app.js --name=nodejs-starter</code>
+      </pre>
+      <p> It will run an instance of your node js application on your server at port depending upon the configuration provided in application starting point eg. <b>[ app.js/index.js ]</b></p>
+      <dl class="row mt-2 mark command-text">
+        <dt class="col-sm-3">syntax</dt>
+        <dd class="col-sm-9">pm2 start [application-starting_point] --name=[unique_name_for_app_instance]</dd>
+      </dl>
+    </div>
+
+    <h4 class="title-heading">Verifying Application Deployment </h4>
+    <div class="heading-content">
+      <p><b>1. </b>In order to check, if application instance is running on server use below command to showcase all the instances currrently being managed by PM2</p>
+      <pre><code>pm2 list</code>
+      </pre>
+      <p> It sould show an instance running with the name  <b>nodejs-starter</b> used above to identify the instance.</p>
+      
+      <div class="img-block">
+        <img class="img-responsive w-100 mb-3"  src="../../../images/node/deploying_nodejs_starter_app_using_pm2/pm2_list.PNG">
+      </div>
+      <p><b>2. </b>To check, if application is fully funcational use url <a href="javascript:void(0)">http://localhost:5000</a></p>
+      <pre><code>pm2 start app.js --name=nodejs-starter</code>
+      </pre>
+      
+      <p> You should see the nodejs-starter-app page on your web browser.</b></p>
+      <dl class="row mt-2 mark command-text">
+        <dt class="col-sm-3">syntax</dt>
+        <dd class="col-sm-9">[http | https]://[server_public_ip]:[port_configured_on_your_nodejs_application] </dd>
+      </dl>
+      <div class="img-block">
+        <img class="img-responsive w-100 mb-3"  src="../../../images/node/deploying_nodejs_starter_app_using_pm2/live_app.PNG">
+      </div>
+    </div>  
+</main>
+<aside class="d-none d-lg-block d-xl-block pt-5 col-lg-2 col-xl-2">
+    <ul class="list-unstyled quick-link-nav">
+      <li><a href="javascript:void(0)">Prerequisites</a></li>
+      <li><a href="javascript:void(0)">Installing Node</a></li>
+      <li><a href="javascript:void(0)">Getting Node.js Starter App</a></li>
+      <li><a href="javascript:void(0)">Installing PM2</a></li>
+      <li><a href="javascript:void(0)">Deploying Application</a></li>
+    </ul>
+</aside>

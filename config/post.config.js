@@ -26,7 +26,7 @@ module.exports={
         {
             mainHeadingKey:'node',
             mainHeadingLabel:'Node',
-            primarySubKey:'install_node_on_centos',
+            primarySubKey:'deploying_nodejs_starter_app_using_pm2',
             topics:[
                 {
                     topicHeadingKey:'install_node_on_centos',
@@ -41,14 +41,14 @@ module.exports={
                     topicHeadingLabel:'Installing Node on ubuntu'
                 },
                 {
-                    topicHeadingKey:'welcome_project_using_node',
-                    topicHeadingLabel:'Creating Welcome project using node'
+                    topicHeadingKey:'deploying_nodejs_starter_app_using_pm2',
+                    topicHeadingLabel:'Deploying Node.js starter app using PM2'
                 },
                 {
                     topicHeadingKey:'ejs_template_for_node',
                     topicHeadingLabel:'Using EJS templating engine for node'
                 }
             ]
-        },
+        }
     ]
 }
